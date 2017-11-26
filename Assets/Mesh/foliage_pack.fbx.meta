@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 6a7545adb906ff943a9fe050c3622685
+timeCreated: 1511726020
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bushes
+    100002: bushes1
+    100004: bushes1_MeshPart0
+    100006: bushes1_MeshPart1
+    100008: bushes1_MeshPart2
+    100010: bushes1_MeshPart3
+    100012: //RootNode
+    100014: Ivy
+    100016: threes
+    100018: threes1
+    100020: bushes1_MeshPart4
+    100022: bushes1_MeshPart5
+    400000: bushes
+    400002: bushes1
+    400004: bushes1_MeshPart0
+    400006: bushes1_MeshPart1
+    400008: bushes1_MeshPart2
+    400010: bushes1_MeshPart3
+    400012: //RootNode
+    400014: Ivy
+    400016: threes
+    400018: threes1
+    400020: bushes1_MeshPart4
+    400022: bushes1_MeshPart5
+    2300000: bushes1_MeshPart0
+    2300002: bushes1_MeshPart1
+    2300004: bushes1_MeshPart2
+    2300006: bushes1_MeshPart3
+    2300008: Ivy
+    2300010: threes1
+    2300012: bushes1_MeshPart4
+    2300014: bushes1_MeshPart5
+    3300000: bushes1_MeshPart0
+    3300002: bushes1_MeshPart1
+    3300004: bushes1_MeshPart2
+    3300006: bushes1_MeshPart3
+    3300008: Ivy
+    3300010: threes1
+    3300012: bushes1_MeshPart4
+    3300014: bushes1_MeshPart5
+    4300000: threes1
+    4300002: bushes1_MeshPart0
+    4300004: bushes1_MeshPart1
+    4300006: bushes1_MeshPart2
+    4300008: bushes1_MeshPart3
+    4300010: Ivy
+    4300012: bushes1_MeshPart4
+    4300014: bushes1_MeshPart5
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS1
+    second: {fileID: 2100000, guid: 14a72f2be984f984aadb0af00bee1f99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS3
+    second: {fileID: 2100000, guid: cbb2ee59bc7dd4242b3d316b2e79bc8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS4
+    second: {fileID: 2100000, guid: fd093f07d766f2d4a8f3e7385346ff93, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 22
+    secondaryUVAreaDistortion: 13
+    secondaryUVHardAngle: 180
+    secondaryUVPackMargin: 13
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
