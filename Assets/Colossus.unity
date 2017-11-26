@@ -1564,6 +1564,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: 6a7545adb906ff943a9fe050c3622685, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 6a7545adb906ff943a9fe050c3622685, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a7545adb906ff943a9fe050c3622685, type: 3}
   m_IsPrefabParent: 0
@@ -4413,7 +4421,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3897059, g: 0.3897059, b: 0.3897059, a: 0}
+  m_BackGroundColor: {r: 0.37537846, g: 0.38911304, b: 0.3897059, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
