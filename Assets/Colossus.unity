@@ -47,8 +47,8 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 3.78
-    m_AlbedoBoost: 1.45
+    m_IndirectOutputScale: 4.52
+    m_AlbedoBoost: 1.74
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
@@ -3509,10 +3509,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SampleCount: 26
-  ScatteringCoef: 0.261
-  ExtinctionCoef: 0.0686
+  ScatteringCoef: 0.104
+  ExtinctionCoef: 0.0121
   SkyboxExtinctionCoef: 0.181
-  MieG: 0
+  MieG: 0.343
   HeightFog: 1
   HeightScale: 0.006
   GroundLevel: 0
@@ -3532,7 +3532,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.9632353, g: 0.90424293, b: 0.87116134, a: 1}
-  m_Intensity: 1.06
+  m_Intensity: 0.86
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 500
@@ -4582,7 +4582,7 @@ MonoBehaviour:
   yMinLimit: -16
   yMaxLimit: 100
   offset: {x: 0, y: 2.4, z: 0.5}
-  rotateAlways: 1
+  rotateAlways: 0
   rotateOnLeftButton: 1
   rotateOnRightButton: 1
   rotateOnMiddleButton: 0
