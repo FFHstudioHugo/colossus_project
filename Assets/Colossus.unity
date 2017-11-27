@@ -2048,6 +2048,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 621290651}
   m_Mesh: {fileID: 4300018, guid: 22026e1361cbb8d46bfd7b4b8830d94f, type: 3}
+--- !u!1 &653235403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 653235404}
+  - component: {fileID: 653235405}
+  m_Layer: 0
+  m_Name: Point light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &653235404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653235403}
+  m_LocalRotation: {x: 0.70613056, y: -0.45681882, z: -0.2976154, w: 0.45179793}
+  m_LocalPosition: {x: 1.8, y: 1.21, z: -3.9}
+  m_LocalScale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+  m_Children: []
+  m_Father: {fileID: 1362980923}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &653235405
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653235403}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.40143815, g: 0.5266376, b: 0.5514706, a: 1}
+  m_Intensity: 2.02
+  m_Range: 20
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1.98
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &654013436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,20 +3508,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleCount: 32
-  ScatteringCoef: 0.151
-  ExtinctionCoef: 0.0668
-  SkyboxExtinctionCoef: 0
-  MieG: 0.11
+  SampleCount: 26
+  ScatteringCoef: 0.261
+  ExtinctionCoef: 0.0686
+  SkyboxExtinctionCoef: 0.181
+  MieG: 0
   HeightFog: 1
-  HeightScale: 0.119
+  HeightScale: 0.006
   GroundLevel: 0
   Noise: 0
   NoiseScale: 0
   NoiseIntensity: 0
   NoiseIntensityOffset: 0
   NoiseVelocity: {x: 0, y: 0}
-  MaxRayLength: 64
+  MaxRayLength: 10
 --- !u!108 &1214125789
 Light:
   m_ObjectHideFlags: 0
@@ -3467,7 +3532,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.9632353, g: 0.90424293, b: 0.87116134, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.06
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 500
@@ -3475,7 +3540,7 @@ Light:
     m_Type: 2
     m_Resolution: 3
     m_CustomResolution: -1
-    m_Strength: 0.863
+    m_Strength: 1
     m_Bias: 0.02
     m_NormalBias: 0.93
     m_NearPlane: 0.2
@@ -3488,11 +3553,11 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 1
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0.4
+  m_BounceIntensity: 0.26
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 2.1
 --- !u!4 &1214125790
 Transform:
   m_ObjectHideFlags: 0
@@ -4045,6 +4110,7 @@ Transform:
   - {fileID: 655449038}
   - {fileID: 29334583}
   - {fileID: 331744053}
+  - {fileID: 653235404}
   m_Father: {fileID: 1759031872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4452,7 +4518,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.37078288, g: 0.39597157, b: 0.39705884, a: 0}
+  m_BackGroundColor: {r: 0.42874137, g: 0.4477106, b: 0.44852942, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
