@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a156df006f8a3a54180044a5ee8c5984
-timeCreated: 1511893736
-licenseType: Free
+timeCreated: 1511969209
+licenseType: Pro
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
@@ -116,7 +116,7 @@ SubstanceImporter:
       - _Metallic: 0
       - _Mode: 0
       - _OcclusionStrength: 1
-      - _Parallax: 0.02
+      - _Parallax: 0.0156
       - _SmoothnessTextureChannel: 0
       - _SpecularHighlights: 1
       - _SrcBlend: 1

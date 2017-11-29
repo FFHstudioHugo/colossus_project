@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b1be0db3f7c95644cbc75d52e89c092e
-timeCreated: 1511960243
+timeCreated: 1511970710
 licenseType: Pro
 SubstanceImporter:
   externalObjects: {}
@@ -10,7 +10,7 @@ SubstanceImporter:
     name: Ground
     prototypeName: Ground
     shaderName: 
-    shader: {fileID: 4800000, guid: cc1ade626855c6e40a995df3d13a9b6e, type: 3}
+    shader: {fileID: 4800000, guid: 73c442e09760e9b419eb0fea4c3846a4, type: 3}
     shaderKeywords: _ALPHABLEND_ON
     renderQueue: -1
     lightmapFlags: 4
@@ -33,7 +33,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Leaves_Brillance
       value:
-        scalar[0]: 0.2
+        scalar[0]: 0.168
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -41,7 +41,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Ratio_Ground-Grass
       value:
-        scalar[0]: 0.393
+        scalar[0]: 0.416
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -49,31 +49,31 @@ SubstanceImporter:
         stringvalue: 
     - name: color_dark
       value:
-        scalar[0]: 0.40000004
-        scalar[1]: 0.5176471
-        scalar[2]: 0.24313727
+        scalar[0]: 0.57604736
+        scalar[1]: 0.6544118
+        scalar[2]: 0.47156143
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: color_Middle
       value:
-        scalar[0]: 0.5019608
-        scalar[1]: 0.61960787
-        scalar[2]: 0.27450982
+        scalar[0]: 0.3372228
+        scalar[1]: 0.44117647
+        scalar[2]: 0.13624567
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: color_light
       value:
-        scalar[0]: 0.7568628
-        scalar[1]: 0.9294118
-        scalar[2]: 0.44705886
+        scalar[0]: 0.6237446
+        scalar[1]: 0.75
+        scalar[2]: 0.3970588
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: opacity_LeavesDetails
       value:
-        scalar[0]: 0.157
+        scalar[0]: 0.227
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -97,11 +97,23 @@ SubstanceImporter:
     materialProperties:
       serializedVersion: 3
       texEnvs:
-      - _TextureSample0:
+      - _AlphaClip:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _diff:
+      - _Diffuse:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _Metallic:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _NormalMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _Roughness:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
@@ -114,6 +126,7 @@ SubstanceImporter:
       - _Cutoff: 0.5
       - _DetailNormalMapScale: 1
       - _DstBlend: 10
+      - _Float0: 0.203
       - _GlossMapScale: 1
       - _Glossiness: 0.5
       - _GlossyReflections: 1
@@ -157,9 +170,18 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp: _diff
+    - shaderProp: _NormalMap
+      material: {instanceID: 0}
+      baseUID: 3828163110
+    - shaderProp: _Metallic
+      material: {instanceID: 0}
+      baseUID: 3828163110
+    - shaderProp: _Diffuse
       material: {instanceID: 0}
       baseUID: 3828163104
+    - shaderProp: _Roughness
+      material: {instanceID: 0}
+      baseUID: 3828163108
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 

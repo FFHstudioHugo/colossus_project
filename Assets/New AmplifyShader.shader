@@ -4,25 +4,18 @@ Shader "groundtest"
 {
 	Properties
 	{
-		_Cutoff( "Mask Clip Value", Float ) = 0.5
 		_diff("diff", 2D) = "white" {}
-		_TextureSample0("Texture Sample 0", 2D) = "white" {}
+		_metalic("metalic", 2D) = "white" {}
+		_roughness("roughness", 2D) = "white" {}
+		_normal("normal", 2D) = "white" {}
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 		[HideInInspector] __dirty( "", Int ) = 1
 	}
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Transparent"  "Queue" = "Geometry+0" "IgnoreProjector" = "True" }
+		Tags{ "RenderType" = "Opaque"  "Queue" = "Geometry+0" "IgnoreProjector" = "True" }
 		Cull Back
-		Stencil
-		{
-			Ref 0
-			Comp NotEqual
-			Pass Keep
-		}
-		Blend One Zero , One Zero
-		BlendOp Add , Max
 		AlphaToMask On
 		CGINCLUDE
 		#include "UnityPBSLighting.cginc"
@@ -33,28 +26,32 @@ Shader "groundtest"
 			float2 uv_texcoord;
 		};
 
+		uniform sampler2D _normal;
+		uniform float4 _normal_ST;
 		uniform sampler2D _diff;
 		uniform float4 _diff_ST;
-		uniform sampler2D _TextureSample0;
-		uniform float4 _TextureSample0_ST;
-		uniform float _Cutoff = 0.5;
+		uniform sampler2D _metalic;
+		uniform float4 _metalic_ST;
+		uniform sampler2D _roughness;
+		uniform float4 _roughness_ST;
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
+			float2 uv_normal = i.uv_texcoord * _normal_ST.xy + _normal_ST.zw;
+			o.Normal = tex2D( _normal, uv_normal ).rgb;
 			float2 uv_diff = i.uv_texcoord * _diff_ST.xy + _diff_ST.zw;
 			float4 tex2DNode1 = tex2D( _diff, uv_diff );
 			o.Albedo = tex2DNode1.rgb;
-			float2 uv_TextureSample0 = i.uv_texcoord * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
-			o.Metallic = tex2D( _TextureSample0, uv_TextureSample0 ).r;
-			o.Alpha = tex2DNode1.a;
-			#if UNITY_PASS_SHADOWCASTER
-			clip( tex2DNode1.a - _Cutoff );
-			#endif
+			float2 uv_metalic = i.uv_texcoord * _metalic_ST.xy + _metalic_ST.zw;
+			o.Metallic = tex2D( _metalic, uv_metalic ).r;
+			float2 uv_roughness = i.uv_texcoord * _roughness_ST.xy + _roughness_ST.zw;
+			o.Smoothness = ( 1.0 - tex2D( _roughness, uv_roughness ).r );
+			o.Alpha = 1;
 		}
 
 		ENDCG
 		CGPROGRAM
-		#pragma surface surf Standard keepalpha fullforwardshadows exclude_path:deferred 
+		#pragma surface surf Standard keepalpha fullforwardshadows exclude_path:forward 
 
 		ENDCG
 		Pass
@@ -82,6 +79,9 @@ Shader "groundtest"
 			{
 				V2F_SHADOW_CASTER;
 				float3 worldPos : TEXCOORD6;
+				float4 tSpace0 : TEXCOORD1;
+				float4 tSpace1 : TEXCOORD2;
+				float4 tSpace2 : TEXCOORD3;
 				float4 texcoords01 : TEXCOORD4;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
@@ -93,6 +93,12 @@ Shader "groundtest"
 				UNITY_TRANSFER_INSTANCE_ID( v, o );
 				float3 worldPos = mul( unity_ObjectToWorld, v.vertex ).xyz;
 				fixed3 worldNormal = UnityObjectToWorldNormal( v.normal );
+				fixed3 worldTangent = UnityObjectToWorldDir( v.tangent.xyz );
+				fixed tangentSign = v.tangent.w * unity_WorldTransformParams.w;
+				fixed3 worldBinormal = cross( worldNormal, worldTangent ) * tangentSign;
+				o.tSpace0 = float4( worldTangent.x, worldBinormal.x, worldNormal.x, worldPos.x );
+				o.tSpace1 = float4( worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y );
+				o.tSpace2 = float4( worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z );
 				o.texcoords01 = float4( v.texcoord.xy, v.texcoord1.xy );
 				o.worldPos = worldPos;
 				TRANSFER_SHADOW_CASTER_NORMALOFFSET( o )
@@ -126,14 +132,17 @@ Shader "groundtest"
 }
 /*ASEBEGIN
 Version=13701
-2635;105;1456;839;850.428;479.7007;1.3;True;True
-Node;AmplifyShaderEditor.SamplerNode;2;-373.3279,189.7992;Float;True;Property;_TextureSample0;Texture Sample 0;2;0;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
-Node;AmplifyShaderEditor.SamplerNode;3;-248.5281,415.9993;Float;True;Property;_TextureSample1;Texture Sample 1;2;0;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
-Node;AmplifyShaderEditor.SamplerNode;1;-378.4296,-95.99171;Float;True;Property;_diff;diff;1;0;None;True;0;False;white;Auto;False;Object;-1;Auto;ProceduralTexture;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;137,-85;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;groundtest;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;Back;0;0;False;0;0;Custom;0.5;True;True;0;True;Transparent;Geometry;ForwardOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;255;255;6;1;0;0;0;0;0;0;False;2;15;10;25;False;0.5;True;0;One;Zero;1;One;Zero;RevSub;Max;0;False;0;0,0,0,0;VertexOffset;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;0;0;True;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0.0;False;4;FLOAT;0.0;False;5;FLOAT;0.0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0.0;False;9;FLOAT;0.0;False;10;FLOAT;0.0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+2075;29;480;886;761.6879;423.2859;1.27;False;False
+Node;AmplifyShaderEditor.SamplerNode;4;-407.3581,195.204;Float;True;Property;_roughness;roughness;2;0;None;True;0;False;white;Auto;False;Object;-1;Auto;ProceduralTexture;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
+Node;AmplifyShaderEditor.OneMinusNode;5;-55.56807,215.5242;Float;False;1;0;FLOAT;0.0;False;1;FLOAT
+Node;AmplifyShaderEditor.SamplerNode;3;-261.2281,418.5393;Float;True;Property;_normal;normal;2;0;None;True;0;False;white;Auto;False;Object;-1;Auto;ProceduralTexture;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
+Node;AmplifyShaderEditor.SamplerNode;1;-503.0846,-193.8517;Float;True;Property;_diff;diff;1;0;None;True;0;False;white;Auto;False;Object;-1;Auto;ProceduralTexture;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
+Node;AmplifyShaderEditor.SamplerNode;2;-425.3977,8.189242;Float;True;Property;_metalic;metalic;2;0;None;True;0;False;white;Auto;False;Object;-1;Auto;ProceduralTexture;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0.0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1.0;False;5;COLOR;FLOAT;FLOAT;FLOAT;FLOAT
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;137,-85;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;groundtest;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;Back;0;0;False;0;0;Opaque;0.5;True;True;0;False;Opaque;Geometry;DeferredOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;False;0;255;255;6;1;0;0;0;0;0;0;False;2;15;10;25;False;0.5;True;0;Zero;One;0;Zero;One;Min;OFF;0;False;0;0,0,0,0;VertexOffset;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;0;0;True;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0.0;False;4;FLOAT;0.0;False;5;FLOAT;0.0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0.0;False;9;FLOAT;0.0;False;10;FLOAT;0.0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+WireConnection;5;0;4;1
 WireConnection;0;0;1;0
+WireConnection;0;1;3;0
 WireConnection;0;3;2;1
-WireConnection;0;9;1;4
-WireConnection;0;10;1;4
+WireConnection;0;4;5;0
 ASEEND*/
-//CHKSM=049E4724BAD91F166AACA25407B5E618E946FC97
+//CHKSM=6FDA4DDB6683BFFF64C2351EB9836B34F293B25F
