@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: b1be0db3f7c95644cbc75d52e89c092e
+timeCreated: 1511970710
+licenseType: Pro
+SubstanceImporter:
+  externalObjects: {}
+  serializedVersion: 5
+  materialInstances:
+  - serializedVersion: 16
+    name: Ground
+    prototypeName: Ground
+    shaderName: 
+    shader: {fileID: 4800000, guid: 73c442e09760e9b419eb0fea4c3846a4, type: 3}
+    shaderKeywords: _ALPHABLEND_ON
+    renderQueue: -1
+    lightmapFlags: 4
+    inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: $randomseed
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: Leaves_Brillance
+      value:
+        scalar[0]: 0.168
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: Ratio_Ground-Grass
+      value:
+        scalar[0]: 0.416
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: color_dark
+      value:
+        scalar[0]: 0.57604736
+        scalar[1]: 0.6544118
+        scalar[2]: 0.47156143
+        scalar[3]: 1
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: color_Middle
+      value:
+        scalar[0]: 0.3372228
+        scalar[1]: 0.44117647
+        scalar[2]: 0.13624567
+        scalar[3]: 1
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: color_light
+      value:
+        scalar[0]: 0.6237446
+        scalar[1]: 0.75
+        scalar[2]: 0.3970588
+        scalar[3]: 1
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: opacity_LeavesDetails
+      value:
+        scalar[0]: 0.227
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: opacity_leavesLevel
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 1, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 1
+      animationUpdateRate: 42
+    materialProperties:
+      serializedVersion: 3
+      texEnvs:
+      - _AlphaClip:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _Diffuse:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _Metallic:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _NormalMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _Roughness:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _texcoord:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      floats:
+      - _BumpScale: 1
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 10
+      - _Float0: 0.203
+      - _GlossMapScale: 1
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 2
+      - _OcclusionStrength: 1
+      - _Parallax: 0.02
+      - _SmoothnessTextureChannel: 0
+      - _SpecularHighlights: 1
+      - _SrcBlend: 5
+      - _UVSec: 0
+      - _ZWrite: 0
+      - __dirty: 0
+      colors:
+      - _Color: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    textureParameters:
+    - name: Ground_basecolor
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Ground_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Ground_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Ground_height
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Ground_roughness
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp: _NormalMap
+      material: {instanceID: 0}
+      baseUID: 3828163110
+    - shaderProp: _Metallic
+      material: {instanceID: 0}
+      baseUID: 3828163110
+    - shaderProp: _Diffuse
+      material: {instanceID: 0}
+      baseUID: 3828163104
+    - shaderProp: _Roughness
+      material: {instanceID: 0}
+      baseUID: 3828163108
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  deletedPrototypes: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
