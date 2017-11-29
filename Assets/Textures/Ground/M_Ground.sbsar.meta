@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b1be0db3f7c95644cbc75d52e89c092e
-timeCreated: 1511893712
-licenseType: Free
+timeCreated: 1511960243
+licenseType: Pro
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
@@ -10,9 +10,9 @@ SubstanceImporter:
     name: Ground
     prototypeName: Ground
     shaderName: 
-    shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _ALPHABLEND_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
-    renderQueue: 3000
+    shader: {fileID: 4800000, guid: cc1ade626855c6e40a995df3d13a9b6e, type: 3}
+    shaderKeywords: _ALPHABLEND_ON
+    renderQueue: -1
     lightmapFlags: 4
     inputs:
     - name: $outputsize
@@ -41,7 +41,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Ratio_Ground-Grass
       value:
-        scalar[0]: 0.44
+        scalar[0]: 0.393
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -97,43 +97,15 @@ SubstanceImporter:
     materialProperties:
       serializedVersion: 3
       texEnvs:
-      - _BumpMap:
+      - _TextureSample0:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _DetailAlbedoMap:
+      - _diff:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _DetailMask:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _DetailNormalMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _EmissionMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _MainTex:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _MetallicGlossMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _OcclusionMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _ParallaxMap:
-          texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
-          offset: {x: 0, y: 0}
-      - _SpecGlossMap:
+      - _texcoord:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
@@ -154,8 +126,9 @@ SubstanceImporter:
       - _SrcBlend: 5
       - _UVSec: 0
       - _ZWrite: 0
+      - __dirty: 0
       colors:
-      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _Color: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
       - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
     - name: Ground_basecolor
@@ -184,21 +157,9 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     textureAssignments:
-    - shaderProp: _MainTex
+    - shaderProp: _diff
       material: {instanceID: 0}
       baseUID: 3828163104
-    - shaderProp: _BumpMap
-      material: {instanceID: 0}
-      baseUID: 3828163106
-    - shaderProp: _MetallicGlossMap
-      material: {instanceID: 0}
-      baseUID: 3828163110
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 3762424023
-    - shaderProp: _SpecGlossMap
-      material: {instanceID: 0}
-      baseUID: 3828163108
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
