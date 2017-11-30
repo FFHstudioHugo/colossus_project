@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: cc1ade626855c6e40a995df3d13a9b6e
-timeCreated: 1511970761
+timeCreated: 1512057545
 licenseType: Pro
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _sol_alpha: {fileID: 2800000, guid: b2b7384b02b67b74eaa9912955f3bbf3, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

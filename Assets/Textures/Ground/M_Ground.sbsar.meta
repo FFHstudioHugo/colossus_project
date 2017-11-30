@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b1be0db3f7c95644cbc75d52e89c092e
-timeCreated: 1511983863
-licenseType: Free
+timeCreated: 1512078314
+licenseType: Pro
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
@@ -10,9 +10,9 @@ SubstanceImporter:
     name: Ground
     prototypeName: Ground
     shaderName: 
-    shader: {fileID: 4800000, guid: 73c442e09760e9b419eb0fea4c3846a4, type: 3}
-    shaderKeywords: _ALPHABLEND_ON
-    renderQueue: -1
+    shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: _ALPHABLEND_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+    renderQueue: 3000
     lightmapFlags: 4
     inputs:
     - name: $outputsize
@@ -33,7 +33,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Leaves_Brillance
       value:
-        scalar[0]: 0.168
+        scalar[0]: 0.2
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -41,7 +41,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Ratio_Ground-Grass
       value:
-        scalar[0]: 0.416
+        scalar[0]: 0.304
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -49,31 +49,31 @@ SubstanceImporter:
         stringvalue: 
     - name: color_dark
       value:
-        scalar[0]: 0.57604736
-        scalar[1]: 0.6544118
-        scalar[2]: 0.47156143
+        scalar[0]: 0.40000004
+        scalar[1]: 0.5176471
+        scalar[2]: 0.24313727
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: color_Middle
       value:
-        scalar[0]: 0.3372228
-        scalar[1]: 0.44117647
-        scalar[2]: 0.13624567
+        scalar[0]: 0.5019608
+        scalar[1]: 0.61960787
+        scalar[2]: 0.27450982
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: color_light
       value:
-        scalar[0]: 0.6237446
-        scalar[1]: 0.75
-        scalar[2]: 0.3970588
+        scalar[0]: 0.7568628
+        scalar[1]: 0.9294118
+        scalar[2]: 0.44705886
         scalar[3]: 1
         texture: {instanceID: 0}
         stringvalue: 
     - name: opacity_LeavesDetails
       value:
-        scalar[0]: 0.227
+        scalar[0]: 0.063
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -81,10 +81,66 @@ SubstanceImporter:
         stringvalue: 
     - name: opacity_leavesLevel
       value:
+        scalar[0]: 0.121
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: LightMapOpacity
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: ShadowIntensity_Low
+      value:
+        scalar[0]: 0
+        scalar[1]: 0.00384615
+        scalar[2]: 0.00384615
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: ShadowIntensity_Med
+      value:
+        scalar[0]: 0.55
+        scalar[1]: 0.531
+        scalar[2]: 1
+        scalar[3]: 1
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: ShadowIntensity_High
+      value:
+        scalar[0]: 0.492958
+        scalar[1]: 0.526
+        scalar[2]: 0.492958
+        scalar[3]: 0.5
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: CustomLightmap
+      value:
         scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
+        texture: {fileID: 2800000, guid: 9f3a85fd12af40140ac799502d0e5cff, type: 3}
+        stringvalue: 
+    - name: useCustomLightmap
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: Lightmapmatrix
+      value:
+        scalar[0]: 0.9745
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0.9713
         texture: {instanceID: 0}
         stringvalue: 
     materialInformation:
@@ -97,27 +153,43 @@ SubstanceImporter:
     materialProperties:
       serializedVersion: 3
       texEnvs:
-      - _AlphaClip:
+      - _BumpMap:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _Diffuse:
+      - _DetailAlbedoMap:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _Metallic:
+      - _DetailMask:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _NormalMap:
+      - _DetailNormalMap:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _Roughness:
+      - _EmissionMap:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
-      - _texcoord:
+      - _MainTex:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _MetallicGlossMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _OcclusionMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _ParallaxMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _SpecGlossMap:
           texture: {instanceID: 0}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
@@ -126,22 +198,20 @@ SubstanceImporter:
       - _Cutoff: 0.5
       - _DetailNormalMapScale: 1
       - _DstBlend: 10
-      - _Float0: -0.24
       - _GlossMapScale: 1
       - _Glossiness: 0.5
       - _GlossyReflections: 1
       - _Metallic: 0
       - _Mode: 2
-      - _OcclusionStrength: 1
-      - _Parallax: 0.02
+      - _OcclusionStrength: 0
+      - _Parallax: 0.0184
       - _SmoothnessTextureChannel: 0
       - _SpecularHighlights: 1
       - _SrcBlend: 5
       - _UVSec: 0
       - _ZWrite: 0
-      - __dirty: 0
       colors:
-      - _Color: {r: 0.53676474, g: 0.53676474, b: 0.53676474, a: 1}
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
       - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
     - name: Ground_basecolor
@@ -169,17 +239,28 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Ground_ao
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
-    - shaderProp: _NormalMap
-      material: {instanceID: 0}
-      baseUID: 3828163110
-    - shaderProp: _Metallic
-      material: {instanceID: 0}
-      baseUID: 3828163110
-    - shaderProp: _Diffuse
+    - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 3828163104
-    - shaderProp: _Roughness
+    - shaderProp: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 3828163106
+    - shaderProp: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 3828163110
+    - shaderProp: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 3787928832
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 3762424023
+    - shaderProp: _SpecGlossMap
       material: {instanceID: 0}
       baseUID: 3828163108
     buildTargetSettings:
